@@ -3,10 +3,6 @@ from functools import partial
 
 root = Tk()
 
-global player1
-global player2
-global player3
-global player4
 # First I should make buttons
 # Which means I should create categories first lol
 root.title("Jeopardy!!")
