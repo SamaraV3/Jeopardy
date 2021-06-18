@@ -1,6 +1,9 @@
 from tkinter import *
 from functools import partial
+import pygame
+from playsound import playsound
 
+pygame.init()
 root = Tk()
 
 # First I should make buttons
@@ -9,6 +12,10 @@ root.title("Jeopardy!!")
 root["bg"] = "#e8e8e8"
 game = LabelFrame(root, padx=10, pady=10, bg="#5ec9ff")
 game.grid(row=0, column=0, padx=5, pady=10)
+
+pygame.mixer.music.load("WAVJeopardy_Song (1).wav")
+pygame.mixer.music.play()
+
 
 label_food = Label(game, text="Foods", height=1, width=9, pady=30, borderwidth=5, font=("Comic Sans MS", 25, "normal", "italic"), bg="#5ec9ff")
 label_pop_culture = Label(game, text="Pop Culture", height=1, width=9, pady=30, borderwidth=5, font=("Comic Sans MS", 25, "normal", "italic"), bg="#5ec9ff")
@@ -398,6 +405,7 @@ def ffQ (index):
         ff5["state"] = DISABLED
         ff5["text"] = ""
         ff5["relief"] = "groove"
+
 
 # My Buttons
 # f = food, pc = pop culture, l = literature, c = capitals, ff = fun facts
